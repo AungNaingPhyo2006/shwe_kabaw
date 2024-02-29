@@ -15,7 +15,7 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
 
- final int _current = 0;
+ int _current = 0;
 
   final List<Widget>_children = [
     const PageOne(),
@@ -24,6 +24,11 @@ class _MainPageState extends State<MainPage> {
     const  NotiPage()
   ];
 
+ void _onTabTapped (int index) {
+    setState(() {
+      _current = index;
+    });
+ }
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +71,28 @@ class _MainPageState extends State<MainPage> {
       ),
      
       // body: const PageOne()   
-      body: _children[_current]
+      body: _children[_current],
+      bottomNavigationBar:  BottomNavigationBar( 
+        currentIndex: _current,
+        onTap: _onTabTapped,
+        items:  const [
+           BottomNavigationBarItem(
+            icon:  Icon(Icons.favorite),
+            label: "Favorites",),
+
+            BottomNavigationBarItem(
+            icon:  Icon(Icons.search),
+            label: "Search",),
+
+            BottomNavigationBarItem(
+            icon:  Icon(Icons.info),
+            label: "Information",),
+
+            BottomNavigationBarItem(
+            icon:  Icon(Icons.notifications),
+            label: "Notification",),
+        ]
+      ),
     );
   }
 }

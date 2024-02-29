@@ -12,7 +12,9 @@ class PageOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ListView(
+    return  Container( 
+      color:Colors.grey[200],
+      child:  ListView(
         children:  [ 
           const SizedBox( 
             width: double.infinity,
@@ -186,6 +188,7 @@ class PageOne extends StatelessWidget {
             )
            )
         ],
-      );
+      ),
+    );
   }
 }

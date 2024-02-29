@@ -5,8 +5,11 @@ class SearchPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center( 
+    return Container( 
+      color : Colors.grey[200],
+      child: const Center( 
       child: Text("I am Search"),
+    ),
     );
   }
 }

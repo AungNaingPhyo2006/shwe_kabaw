@@ -15,7 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'Aung Naing Phyo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(  
-        primarySwatch: Colors.deepPurple,     
+        primarySwatch: Colors.deepPurple,  
+        canvasColor: Colors.deepPurple,   
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
