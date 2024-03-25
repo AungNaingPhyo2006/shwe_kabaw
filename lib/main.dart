@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shwe_kabaw/views/main_page.dart';
+import 'package:shwe_kabaw/network/api_service.dart';
+import 'package:provider/provider.dart';
+import 'package:shwe_kabaw/views/welcome_screen.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,17 +14,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Aung Naing Phyo',
+    return Provider(
+      create: (context) => ApiService.create(),
+      child :MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(  
-        primarySwatch: Colors.deepPurple,  
-        canvasColor: Colors.deepPurple,   
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        scaffoldBackgroundColor: Colors.white
       ),
-      home: const MainPage(),
+      home: const WelcomeScreen(),
+    )
     );
+      
   }
 }
 
