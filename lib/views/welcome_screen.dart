@@ -126,4 +126,4 @@ class WelcomeScreen extends StatelessWidget {
   }
 }
 
-//https://www.youtube.com/watch?v=ucwBcTgxyME  12:9
+//https://www.youtube.com/watch?v=ucwBcTgxyME  26:00
