@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shwe_kabaw/views/course_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -166,7 +167,15 @@ static const imageList = [
                   ),
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Navigator.push(
+                          context,
+                           MaterialPageRoute(
+                            builder: (context) => 
+                            CourseScreen(imageList[index]),
+                            ),
+                        );
+                      },
                       child: Container(
                         padding: EdgeInsets.symmetric(vertical: 10 , horizontal: 10),
                         decoration: BoxDecoration(
@@ -208,6 +217,19 @@ static const imageList = [
         )
         ],
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        iconSize: 32,
+        selectedItemColor: Color(0xFF674AEF),
+        selectedFontSize: 18,
+        unselectedItemColor: Colors.grey,
+        showUnselectedLabels: true,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.assignment), label: 'Courses'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Wishlist'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
+
+        ])
     );
     
   }
